@@ -4,16 +4,24 @@ import QuizBar from './components/QuizBar';
 import FlashCard from './components/FlashCard'
 
 class App extends Component{
-  constructor(){
-    super();
-    this.state = {
-      cardStyle: "Random"
-    }
+	constructor(){
+		super();
+		this.state = {
+      cardStyle: "Random",
+      ready: false,
+		}
   }
 
   userChoice = (cardStyle)=>{
-    this.setState( { 
-      cardStyle
+    this.setState({
+      cardStyle,
+      ready: false
+    })
+  }
+
+  nowReady = ()=>{
+    this.setState({
+      ready: true
     })
   }
 
